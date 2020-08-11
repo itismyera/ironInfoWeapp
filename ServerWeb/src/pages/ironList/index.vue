@@ -4,7 +4,7 @@
     <div class="header-filters">
       <el-form :inline="true">
         <el-form-item>
-          <el-input v-model="query.name" placeholder="钢材名称" prefix-icon="el-icon-search"></el-input>
+          <el-input size="medium" v-model="query.name" placeholder="钢材名称" prefix-icon="el-icon-search"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" icon="el-icon-plus" @click="createDialog=true">钢材录入</el-button>
@@ -129,7 +129,7 @@
 <script>
 import createForm from './createForm'
 import { debounce } from '../../utils'
-import {getIron, deleteIron, addNewPrice, updateIron} from '@/api/iron.api'
+import {getIron, getPriceById, deleteIron, addNewPrice, updateIron} from '@/api/iron.api'
 export default {
   name: 'ironScript',
   components: {
@@ -311,15 +311,19 @@ export default {
         });
     },
     watchPrice(row) {
-      let arr = row.old_price.map(v => {
-        return {
-          price: v.price,
-          date: new Date(v.createdAt).toLocaleString()
+      getPriceById(row.id).then(res => {
+        if (res) {
+          let arr = res.map(v => {
+            return {
+              price: v.price,
+              date: new Date(v.createdAt).toLocaleDateString()
+            }
+          })
+          // console.log(arr)
+          this.chartData.rows = arr
+          this.priceDialog = true
         }
       })
-      // console.log(arr)
-      this.chartData.rows = arr
-      this.priceDialog = true
     },
     /**
      * 删除钢材

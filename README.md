@@ -1,12 +1,9 @@
 # 铜陵钢材信息小程序整体系统
 
+### 投资理财, 我选[安信证券](https://sjkh.essence.com.cn/h5kh/openAccountApli.html?bank=0&sceneid=1&branch=8910&org=1&tgid=494303&pt=crm#)
+
 ## 项目出现原因
-铜陵钢材厂朋友需要一个小程序, 方便顾客查看他们厂内钢材价格, 一方面可以方便顾客, 不用总是打电话询价; 另一方面, 小程序嵌于微信, 相比网址, APP传播方便.
-
-## 项目终止原因
-
- - 朋友不能实时更新钢材信息, 文章等, 当然作为程序运维者, 我对此很遗憾, 此项目是公益项目, 不对其进行收费, 我也是想看到一个项目从无到有, 确实是看到了
- - 钢材信息主旨就是更好的查看钢材价格信息等, 如果不对其进行更新运营, 也就没有存在必要, 为了不浪费这次经历, 还是把代码放出来当作纪念
+铜陵已是资源枯竭型城市, 在这互联网寒冬, 我们钢材厂继续跟上工业互联网的发展, 用工业互联网点燃寒冬下的火柴, 让火柴点燃我们的激情, 让激情温暖寒冬
  
 ## 项目时间线
  
@@ -22,6 +19,12 @@
  - 2019.10 后端添加数据库初始化, 创建初始管理员相关脚本
  - 2019.11 后端添加钢材价格爬虫定时任务
  - 2019.12 小程序图表改为ucharts
+ - 2020.01 后端添加钢材价格汇总文章定时发布任务
+ - 2020.01 小程序添加钢材重量计算器
+ - 2020.03 高层视察数据大屏
+ - 2020.04 支付宝支付流程
+ - 2020.04 小程序搜索添加敏感词判断
+ - 2020.07 小程序扫码登录
 
 ## 项目目录
 
@@ -29,6 +32,7 @@
  - [ServerWeb         WEB管理后台PC端](https://github.com/klren0312/ironInfoWeapp/tree/master/ServerWeb)
  - [ServerWebMobile   WEB管理后台手机端](https://github.com/klren0312/ironInfoWeapp/tree/master/ServerWebMobile)
  - [Weapp             小程序与H5端](https://github.com/klren0312/ironInfoWeapp/tree/master/Weapp)
+ - [bigScreen         视察用数据大屏](https://github.com/klren0312/ironInfoWeapp/tree/master/bigScreen)
  - [相关文档](https://github.com/klren0312/ironInfoWeapp/tree/master/doc)
 
 ## 开源计划
@@ -46,11 +50,29 @@
 ## 小程序码
 ![](./Weapp/img/weapp.png)
 
-## 管理后台体验地址
-[http://admin.zzes1314.cn](http://admin.zzes1314.cn)
+# 高层视察数据大屏
+> https://klren0312.github.io/ironInfoWeapp/
+
+![](./bigScreen/1.gif)
+
+# 管理后台
+>[http://admin.zzes1314.cn](http://admin.zzes1314.cn)
 (**用户名**: `tour`,  **密码**: `tour520`)
 
+
+![](./Weapp/img/backend1.png)
+![](./Weapp/img/backend2.png)
+
+
+# 管理后台手机端
+![](./ServerWebMobile/imgs/mobile.jpg)
+
+
 ## 界面截图
+ - 第七版, 钢材计算器, 图表样式修改, 底部tabbar图标修改
+---
+![](./Weapp/img/7.jpg)
+
  - 第六版, UI错误修改, 钢材搜索添加语音识别, 删除影响渲染的广告位
 ---
 ![](./Weapp/img/6.jpg)
@@ -71,12 +93,6 @@
  - 第一版
 ---
 ![](./Weapp/img/1.png)
-
-# 管理后台
-![](./Weapp/img/backend.png)
-
-# 管理后台手机端
-![](./ServerWebMobile/imgs/mobile.jpg)
 
 ## Stargazers over time
 

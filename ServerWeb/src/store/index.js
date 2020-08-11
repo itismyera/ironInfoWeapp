@@ -7,7 +7,9 @@ Vue.use(Vuex)
 const state = {
   user: null,
   baseUrl: apiServer,
-  token: ''
+  token: '',
+  themeValue: 'black',
+  centerTitle: '治电一期综合管理后台'
 }
 
 const mutations = {
@@ -20,6 +22,12 @@ const mutations = {
   },
   SET_TOKEN(state, token) {
     state.token = token
+  },
+  SET_THEME(state, theme) {
+    state.themeValue = theme
+  },
+  SET_SERVER(state, server) {
+    state.baseUrl = server
   }
 }
 
@@ -32,6 +40,12 @@ const actions = {
   },
   SET_TOKEN(state, token) {
     state.commit('SET_TOKEN', token)
+  },
+  SET_THEME(state, theme) {
+    state.commit('SET_THEME', theme)
+  },
+  SET_SERVER(state, server) {
+    state.commit('SET_SERVER', server)
   }
 }
 

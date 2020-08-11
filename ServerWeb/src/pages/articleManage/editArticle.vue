@@ -64,7 +64,7 @@ export default {
       })
     },
     goback() {
-      this.$router.push({path: '/articleManage'})
+      this.$router.go(-1)
     }
   }
 }
@@ -74,6 +74,9 @@ export default {
   .create-article {
     .edit-container {
       background: #fff;
+      .el-input__inner {
+        color: #333;
+      }
       .markdown-editor .editor-preview-active, .markdown-editor .editor-preview-active-side {
         color: #323232;
       }

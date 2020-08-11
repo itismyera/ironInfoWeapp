@@ -1,4 +1,5 @@
 <template>
+	<!-- #ifdef MP-WEIXIN -->
 	<view class="my-header bg-gradual-blue" :style="{height: CustomBar + 'px'}">
 		<view class="header fixed bg-gradual-blue" :style="{paddingTop: StatusBar + 'px', height: CustomBar + 'px'}">
 			<view class="tab">
@@ -15,6 +16,7 @@
 			<image v-if="showGif" src="https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/wave.gif" class="wave-gif" mode=""></image>
 		</view>
 	</view>
+	<!-- #endif -->
 </template>
 
 <script>
@@ -57,7 +59,7 @@
 					if ('avatarUrl' in state.infos) {
 						return state.infos.avatarUrl
 					} else {
-						return 'https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/slider11.png'
+						return 'https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/banner2.png'
 					}
 				}
 			})
@@ -135,7 +137,12 @@
 }
 
 .scroll-view_x {
+	/* #ifdef MP */
 	width: 290upx;
+	/* #endif */
+	/* #ifndef MP */
+	width: 400upx;
+	/* #endif */
 	margin-left: 20upx;
 	font-size: 24upx;
 	white-space: nowrap;

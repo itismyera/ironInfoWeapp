@@ -85,3 +85,37 @@ export function countUser (openId, history) {
 		}
 	})
 }
+
+// 敏感词查询
+export function checkText (text) {
+	return request ({
+		url: `${store.state.rootUrl2}/toutiao/text/${text}`,
+		method: 'GET'
+	})
+}
+
+// 扫码触发
+export function checkQrcode (guid, openId) {
+	return request({
+		url: `${store.state.rootUrl}/qrcode`,
+		method: 'POST',
+		data: {
+			guid: guid,
+			openId: openId
+		}
+	})
+}
+
+// 绑定用户
+export function bindUser (username, password, openId) {
+	console.log(username)
+	return request({
+		url: `${store.state.rootUrl}/weapp/wuser`,
+		method: 'POST',
+		data: {
+			username: username,
+			password: password,
+			openId: openId
+		}
+	})
+}

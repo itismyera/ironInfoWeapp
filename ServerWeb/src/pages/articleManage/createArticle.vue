@@ -48,16 +48,18 @@ export default {
       })
     },
     goback() {
-      this.$router.push({path: '/articleManage'})
+      this.$router.go(-1)
     }
   }
 }
 </script>
 <style lang="scss">
-
   .create-article {
     .edit-container {
       background: #fff;
+      .el-input__inner {
+        color: #333;
+      }
       .markdown-editor .editor-preview-active, .markdown-editor .editor-preview-active-side {
         color: #323232;
       }
