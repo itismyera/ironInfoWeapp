@@ -23,7 +23,7 @@
 					
 					<view class="price">最新价格:<text class="price-num">{{subCategoryList.price}}</text></view>
 					<view class="info">{{subCategoryList.info}}</view>
-					<!-- #ifndef MP-WEIXIN -->
+					<!-- #ifndef MP -->
 					<view class="iron-contact">
 						<view class="info-text">感觉价格不合理？ 欢迎联系我们议价</view>
 						<view class="info-text">联系电话(点击即可拨打)</view>
@@ -104,7 +104,12 @@
 				title: '加载中'
 			})
 			this.getCategory();
+			// #ifndef MP
+			this.height = uni.getSystemInfoSync().windowHeight
+			// #endif
+			// #ifdef MP
 			this.height = uni.getSystemInfoSync().windowHeight - this.CustomBar
+			// #endif
 		}
 	}
 </script>
@@ -148,13 +153,13 @@
 	.nav-right {
 		padding: 0 28upx 0;
 		width: 70%;
-		background: #eee;
+		background: #fcfcfc;
 	}
 	.nav-right .content {
 		margin-top: 20rpx;
 		padding-top: 20upx;
 		background: #fff;
-		box-shadow: 0 20px 40px -15px rgba(0,0,0,.05);
+		box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 	}
 	.nav-right .content-header {
 		padding-left: 20upx;
@@ -205,7 +210,7 @@
 
 	.active {
 		color: #007AFF;
-		background: #eee;
+		background: #fcfcfc;
 		border-left: 4upx solid #00BFFF;
 	}
 	.iron-contact .info-text {
